@@ -41,6 +41,7 @@
 #include <sys/time.h>
 #include <sys/resource.h>
 #include <signal.h>
+#include <string.h>
 
 /* NOTE: if the -O3 option is not available, then comment out this macro! */
 static int scratch;
