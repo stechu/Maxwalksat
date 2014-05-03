@@ -762,7 +762,6 @@ fix(int tofix)
     int numbreak[MAXLENGTH];	/* number of clauses changing */
     /* each atoms would make false */
     int i;			/* loop counter */
-    int j;			/* another loop counter */
     int choice;
     static int (*pickcode[])(int *numbreak,int clausesize, int tofix) = 
       {pickrandom,pickproductsum,pickreciprocal,pickadditive,
@@ -985,9 +984,7 @@ picktabu(int *numbreak,int clausesize, int tofix)
     int best[MAXLENGTH];	/* best possibility so far */
     int numbest;		/* how many are tied for best */
     int bestvalue;		/* best value so far */
-    int tabu_level;
-    int val;
-
+ 
     numbest = 0;
     bestvalue = BIG;
 
@@ -1020,14 +1017,9 @@ picktabu(int *numbreak,int clausesize, int tofix)
 int pickexponential(int *numbreak,int clausesize, int tofix)
 	{
 	int i;                             /* a loop counter */
-	int best[MAXLENGTH];               /* best possibility so far */
-	int numbest;                       /* how many are tied for best */
-	int bestvalue;                     /* best value so far */
 	int weight[MAXLENGTH];             /* weights of each possibility */
 	int tochange;                      /* value to return */
-	int totalproduct = 1;              /* product of all numbreaks */
-	int totalsum = 0;                  /* sum of all numbreaks */
-
+	
 	if(clausesize == 1)
 		return(0);
 	if((tochange = pickzero(numbreak,clausesize)) != NOVALUE)
