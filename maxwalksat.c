@@ -572,7 +572,7 @@ void init(char initfile[], int initoptions)
 	    fprintf(stderr, "Bad init file %s\n", initfile);
 	    exit(1);
 	}
-	close(infile);
+	fclose(infile);
 	/* printf("read %d values\n", i); */
     }
 
