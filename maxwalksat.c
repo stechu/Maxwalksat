@@ -250,6 +250,8 @@ int main(int argc,char *argv[])
 	    }
 	  else if (strcmp(argv[i],"-bad") == 0)
 	    printfalse = TRUE;
+      else if(strcmp(argv[i],"-solcnf") == 0)
+        printsolcnf = TRUE;
 	  else if (strcmp(argv[i],"-hard") == 0)
 	    hard = TRUE;
 	  else if (strcmp(argv[i],"-numsol") == 0)
